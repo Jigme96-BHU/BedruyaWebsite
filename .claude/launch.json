@@ -1,0 +1,13 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "bedurya",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "dev"],
+      "cwd": "/Users/jigmelhaden/Desktop/claudeBedruya/bedurya-website",
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
