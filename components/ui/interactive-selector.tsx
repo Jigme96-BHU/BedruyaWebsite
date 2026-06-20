@@ -27,6 +27,23 @@ const selectorStyles = `
   }
   .delay-300 { animation-delay: 0.3s; }
   .delay-600 { animation-delay: 0.6s; }
+  @media (max-width: 767px) {
+    .selector-strip {
+      flex-direction: column !important;
+      height: auto !important;
+      border-radius: 16px !important;
+    }
+    .selector-strip > div {
+      flex: none !important;
+      height: 80px !important;
+      border-left: none !important;
+      border-top: 2px solid rgba(255,255,255,0.08) !important;
+      background-size: cover !important;
+    }
+    .selector-strip > div.selector-active {
+      height: 220px !important;
+    }
+  }
 `;
 
 const InteractiveSelector = ({
@@ -96,6 +113,7 @@ const InteractiveSelector = ({
 
       {/* Selector strip */}
       <div
+        className="selector-strip"
         style={{
           display: "flex",
           width: "100%",
@@ -110,6 +128,7 @@ const InteractiveSelector = ({
           <div
             key={index}
             onClick={() => setActiveIndex(index)}
+            className={activeIndex === index ? "selector-active" : ""}
             style={{
               position: "relative",
               flex: activeIndex === index ? "7 1 0%" : "1 1 0%",

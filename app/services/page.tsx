@@ -102,7 +102,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services */}
-      <section style={{ background: "#FFFDF8", padding: "96px 24px" }}>
+      <section className="services-section" style={{ background: "#FFFDF8", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
           {services.map((s, i) => (
             <div
@@ -151,6 +151,7 @@ export default function ServicesPage() {
 
               {/* Image */}
               <div
+                className="service-image"
                 style={{
                   order: i % 2 === 0 ? 1 : 0,
                   position: "relative",
@@ -174,7 +175,15 @@ export default function ServicesPage() {
             </div>
           ))}
         </div>
-        <style>{`@media (max-width: 768px) { .service-row { grid-template-columns: 1fr !important; } .service-row > div { order: unset !important; } }`}</style>
+        <style>{`
+          @media (max-width: 1100px) { .service-row { gap: 40px !important; } }
+          @media (max-width: 768px) {
+            .service-row { grid-template-columns: 1fr !important; gap: 24px !important; }
+            .service-row > div { order: unset !important; }
+            .service-image { height: 260px !important; }
+          }
+          @media (max-width: 767px) { .services-section { padding: 60px 16px !important; } }
+        `}</style>
       </section>
 
       {/* Closing promise */}

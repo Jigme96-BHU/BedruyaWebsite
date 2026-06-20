@@ -106,8 +106,11 @@ export default function HomePage() {
           </motion.div>
         </div>
         <style>{`
+          @media (max-width: 1100px) {
+            .about-grid { gap: 40px !important; }
+          }
           @media (max-width: 768px) {
-            .about-grid { grid-template-columns: 1fr !important; }
+            .about-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
             .about-deco-frame { display: none !important; }
           }
         `}</style>
@@ -128,7 +131,7 @@ export default function HomePage() {
       />
 
       {/* ── VALUES ── */}
-      <section style={{ background: "#F7F5F2", padding: "100px 24px" }}>
+      <section className="home-section-padded" style={{ background: "#F7F5F2", padding: "100px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <motion.div
             variants={stagger}
@@ -150,6 +153,7 @@ export default function HomePage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.1 }}
+            className="values-grid"
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px" }}
           >
             {values.map((v, i) => (
@@ -213,6 +217,7 @@ export default function HomePage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.2 }}
+            className="team-grid"
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "32px", marginBottom: "48px" }}
           >
             {[
@@ -246,6 +251,18 @@ export default function HomePage() {
         </div>
       </section>
 
+      <style>{`
+        @media (max-width: 767px) {
+          .home-section-padded { padding: 60px 16px !important; }
+          .values-grid { grid-template-columns: 1fr !important; }
+          .team-grid { grid-template-columns: 1fr 1fr !important; }
+          .cta-buttons { flex-direction: column !important; align-items: stretch !important; }
+          .cta-buttons a { text-align: center !important; }
+        }
+        @media (max-width: 480px) {
+          .team-grid { grid-template-columns: 1fr !important; }
+        }
+      `}</style>
       {/* ── CTA ── */}
       <section style={{ background: "#1E4D7B", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
         {/* Decorative circles */}
@@ -266,7 +283,7 @@ export default function HomePage() {
           <motion.p variants={fadeUp} style={{ color: "rgba(255,255,255,0.7)", fontSize: "18px", lineHeight: 1.75, marginBottom: "40px" }}>
             Let us walk alongside you. Call us today or send a message and one of our team will be in touch.
           </motion.p>
-          <motion.div variants={fadeUp} style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
+          <motion.div variants={fadeUp} className="cta-buttons" style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <a
               href="tel:+61405752984"
               style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 700, fontSize: "16px", background: "#B45309", color: "#FFFFFF", padding: "16px 32px", borderRadius: "12px", textDecoration: "none", display: "inline-block", cursor: "pointer" }}

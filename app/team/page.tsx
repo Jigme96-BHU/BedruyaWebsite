@@ -71,14 +71,14 @@ export default function TeamPage() {
       </section>
 
       {/* Team Members */}
-      <section style={{ background: "#FFFDF8", padding: "96px 24px" }}>
+      <section className="team-section" style={{ background: "#FFFDF8", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
           {team.map((member, i) => (
             <div
               key={member.name}
               style={{
                 display: "grid",
-                gridTemplateColumns: "340px 1fr",
+                gridTemplateColumns: "minmax(240px, 340px) 1fr",
                 gap: "64px",
                 alignItems: "start",
               }}
@@ -87,6 +87,7 @@ export default function TeamPage() {
               {/* Photo + name */}
               <div style={{ textAlign: "center", order: i % 2 === 0 ? 0 : 1 }}>
                 <div
+                  className="member-photo"
                   style={{
                     position: "relative",
                     width: "280px",
@@ -144,10 +145,15 @@ export default function TeamPage() {
           ))}
         </div>
         <style>{`
+          @media (max-width: 1100px) {
+            .member-row { grid-template-columns: minmax(200px, 280px) 1fr !important; gap: 40px !important; }
+          }
           @media (max-width: 768px) {
             .member-row { grid-template-columns: 1fr !important; gap: 32px !important; }
             .member-row > div { order: unset !important; }
+            .member-photo { width: 200px !important; height: 200px !important; }
           }
+          @media (max-width: 767px) { .team-section { padding: 60px 16px !important; } }
         `}</style>
       </section>
 

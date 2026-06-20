@@ -39,7 +39,7 @@ export default function ContactPage() {
       </section>
 
       {/* Contact content */}
-      <section style={{ background: "#FFFDF8", padding: "96px 24px" }}>
+      <section className="contact-section" style={{ background: "#FFFDF8", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1.6fr", gap: "64px", alignItems: "start" }} className="contact-grid">
 
           {/* Contact Details */}
@@ -299,11 +299,14 @@ export default function ContactPage() {
           </div>
         </div>
         <style>{`
+          @media (max-width: 1100px) { .contact-grid { gap: 40px !important; } }
+          @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr 1.3fr !important; } }
           @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr !important; } }
           @media (max-width: 480px) {
             .form-row { grid-template-columns: 1fr !important; }
             .contact-form-card { padding: 24px !important; }
           }
+          @media (max-width: 767px) { .contact-section { padding: 60px 16px !important; } }
         `}</style>
       </section>
     </>

@@ -14,7 +14,7 @@ export default function Footer() {
         paddingBottom: "32px",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+      <div className="footer-wrap" style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
         <div
           className="footer-grid"
           style={{
@@ -202,6 +202,7 @@ export default function Footer() {
       <style dangerouslySetInnerHTML={{ __html: `
         @media (max-width: 768px) {
           .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+          .footer-wrap { padding: 0 16px !important; }
         }
         @media (max-width: 480px) {
           .footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; }

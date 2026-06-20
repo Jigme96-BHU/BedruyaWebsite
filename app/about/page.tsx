@@ -100,8 +100,11 @@ export default function AboutPage() {
           </div>
         </div>
         <style>{`
+          @media (max-width: 1100px) {
+            .split-grid { gap: 40px !important; }
+          }
           @media (max-width: 768px) {
-            .split-grid { grid-template-columns: 1fr !important; }
+            .split-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
             .split-image { height: 280px !important; }
           }
         `}</style>
@@ -167,7 +170,10 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
-        <style>{`@media (max-width: 640px) { .story-grid { grid-template-columns: 1fr !important; } }`}</style>
+        <style>{`
+          @media (max-width: 640px) { .story-grid { grid-template-columns: 1fr !important; } }
+          @media (max-width: 767px) { .about-section-pad { padding: 60px 16px !important; } }
+        `}</style>
       </section>
 
       {/* Values */}

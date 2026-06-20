@@ -57,12 +57,12 @@ export default function HeroSlideshow() {
         background: "linear-gradient(to bottom, rgba(0,0,0,0.35) 0%, transparent 100%)",
       }} />
 
-      <div style={{
+      <div className="hero-content" style={{
         position: "relative",
         width: "100%",
         maxWidth: "1600px",
         margin: "0 auto",
-        padding: "80px 8% 80px 24px",
+        padding: "80px 5% 80px 40px",
         display: "flex",
         justifyContent: "flex-start",
       }}>
@@ -91,7 +91,7 @@ export default function HeroSlideshow() {
             lineHeight: 1.0,
             marginBottom: "20px",
           }}>
-            <span className="hero-heading-main" style={{ fontSize: "clamp(64px, 9vw, 108px)", display: "block" }}>
+            <span className="hero-heading-main" style={{ fontSize: "clamp(40px, 6vw, 108px)", display: "block" }}>
               Bringing Light
             </span>
             <span style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "#F59E0B", display: "block", marginTop: "4px" }}>
@@ -210,8 +210,15 @@ export default function HeroSlideshow() {
       </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1280px) {
+          .hero-content { padding: 60px 5% 60px 32px !important; }
+        }
+        @media (max-width: 768px) {
+          .hero-content { padding: 48px 20px 80px !important; }
+          .hero-heading-main { font-size: clamp(36px, 8vw, 72px) !important; }
+        }
         @media (max-width: 480px) {
-          .hero-heading-main { font-size: clamp(36px, 9vw, 64px) !important; }
+          .hero-heading-main { font-size: clamp(32px, 9vw, 56px) !important; }
           .hero-controls { bottom: 16px !important; right: 16px !important; }
           .hero-counter { display: none !important; }
           .hero-scroll-cue { display: none !important; }

@@ -68,7 +68,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav + CTA grouped on the right */}
-        <div className="hidden md:flex" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
+        <div className="nav-desktop" style={{ display: "flex", alignItems: "center", gap: "4px" }}>
           <ul style={{ display: "flex", gap: "4px", listStyle: "none", margin: 0, padding: 0 }}>
             {links.map((l) => (
               <li key={l.href}>
@@ -125,7 +125,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="md:hidden"
+          className="nav-hamburger"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
           style={{
@@ -143,7 +143,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div
-          className="md:hidden"
+          className="nav-mobile-menu"
           style={{
             borderTop: "1px solid rgba(180,83,9,0.1)",
             padding: "16px 24px 20px",
@@ -194,6 +194,19 @@ export default function Navbar() {
         </div>
       )}
       <style dangerouslySetInnerHTML={{ __html: `
+        .nav-desktop { display: flex; }
+        .nav-hamburger { display: none; }
+        .nav-mobile-menu { display: block; }
+        @media (max-width: 768px) {
+          .nav-desktop { display: none !important; }
+          .nav-hamburger { display: block !important; }
+        }
+        @media (min-width: 769px) {
+          .nav-mobile-menu { display: none !important; }
+        }
+        @media (max-width: 1100px) {
+          .nav-desktop a[style] { font-size: 14px !important; padding: 8px 8px !important; }
+        }
         @media (max-width: 360px) {
           .nav-brand { font-size: 15px !important; }
         }
