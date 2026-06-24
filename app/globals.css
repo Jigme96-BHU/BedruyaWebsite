@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
+@import "./premium.css";
 
 :root {
   /* diced-hero-section tokens */
@@ -45,13 +46,208 @@ body {
 
 h1, h2, h3, h4, h5 {
   font-family: 'Cormorant Garamond', serif;
-  line-height: 1.15;
-  font-weight: 600;
+  line-height: 1.12;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ── Page interaction utilities (About, Services, Team, Contact) ── */
+
+.page-btn-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+.page-btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 250ms ease, box-shadow 250ms ease, transform 250ms ease;
+}
+
+.page-btn-primary {
+  background: #B45309;
+  color: #fff;
+}
+
+.page-btn-primary:hover {
+  background: #92400E;
+  box-shadow: 0 8px 24px rgba(180, 83, 9, 0.28);
+}
+
+.page-btn-blue {
+  background: #1E4D7B;
+  color: #fff;
+}
+
+.page-btn-blue:hover {
+  background: #1a3d5c;
+  box-shadow: 0 8px 24px rgba(30, 77, 123, 0.28);
+}
+
+.page-btn-secondary {
+  background: #1E4D7B;
+  color: #fff;
+}
+
+.page-btn-secondary:hover {
+  background: #1a3d5c;
+  box-shadow: 0 8px 24px rgba(30, 77, 123, 0.28);
+}
+
+.page-btn:focus-visible,
+.page-input:focus-visible,
+.page-select:focus-visible,
+.page-textarea:focus-visible {
+  outline: 2px solid #B45309;
+  outline-offset: 2px;
+}
+
+.page-hover-lift {
+  transition: box-shadow 300ms ease, transform 300ms ease;
+}
+
+.page-hover-lift:hover {
+  box-shadow: 0 8px 32px rgba(28, 25, 23, 0.1);
+}
+
+.page-input,
+.page-select,
+.page-textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #E5E0D8;
+  font-size: 15px;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+  box-sizing: border-box;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.page-input:focus,
+.page-select:focus,
+.page-textarea:focus {
+  border-color: #B45309;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.12);
+}
+
+.page-input-error {
+  border-color: #DC2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1) !important;
+}
+
+.page-select {
+  background: #fff;
+  cursor: pointer;
+}
+
+.page-textarea {
+  resize: vertical;
+}
+
+.page-contact-item {
+  transition: transform 250ms ease, background-color 250ms ease;
+  border-radius: 12px;
+  padding: 4px;
+  margin: -4px;
+}
+
+.page-contact-item:hover {
+  transform: translateX(4px);
+}
+
+.page-contact-item a {
+  transition: color 250ms ease;
+}
+
+.page-contact-item a:hover {
+  color: #B45309 !important;
+}
+
+.page-tag {
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.page-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(28, 25, 23, 0.08);
+}
+
+.page-success-enter {
+  animation: pageSuccessIn 450ms ease forwards;
+}
+
+@keyframes pageSuccessIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.page-icon-box {
+  transition: transform 250ms ease, background-color 250ms ease;
+}
+
+/* Team avatar portraits */
+.team-avatar-frame {
+  aspect-ratio: 1 / 1;
+}
+
+.team-avatar-image,
+.member-photo img,
+.testimonial-image {
+  object-fit: cover !important;
+  object-position: center 18% !important;
+}
+
+.testimonial-image-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: #F7F5F2;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+.testimonial-image-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .team-avatar--profile {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-hover-lift:hover,
+  .page-contact-item:hover,
+  .page-tag:hover {
+    transform: none;
+  }
+
+  .page-success-enter {
+    animation: none;
   }
 }

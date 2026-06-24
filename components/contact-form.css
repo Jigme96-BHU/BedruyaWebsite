@@ -1,0 +1,424 @@
+/* ── Contact form ── */
+
+.contact-form-card {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 2px rgba(28, 25, 23, 0.04),
+    0 12px 48px rgba(28, 25, 23, 0.08);
+  border: 1px solid rgba(180, 83, 9, 0.1);
+}
+
+.contact-form-accent {
+  height: 4px;
+  background: linear-gradient(90deg, #B45309 0%, #D97706 40%, #1E4D7B 100%);
+}
+
+.contact-form-body {
+  padding: 36px 40px 40px;
+}
+
+.contact-form-header {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.06);
+}
+
+.contact-form-eyebrow {
+  font-family: 'Nunito', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #B45309;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.contact-form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 32px);
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0 0 8px;
+  line-height: 1.15;
+}
+
+.contact-form-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  color: #78716C;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-label {
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #44403C;
+  line-height: 1.3;
+}
+
+.contact-label-required {
+  color: #B45309;
+  margin-left: 2px;
+}
+
+.contact-input-shell {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-input-shell--textarea {
+  align-items: stretch;
+}
+
+.contact-input-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #A8A29E;
+  pointer-events: none;
+  transition: color 250ms ease;
+  z-index: 1;
+}
+
+.contact-input-shell--textarea .contact-input-icon {
+  top: 16px;
+  transform: none;
+}
+
+.contact-input-shell:focus-within .contact-input-icon {
+  color: #B45309;
+}
+
+.contact-input-shell .page-input,
+.contact-input-shell .page-select,
+.contact-input-shell .page-textarea {
+  width: 100%;
+  flex: 1 1 auto;
+  min-width: 0;
+  padding-left: 44px;
+  background: #FFFDF8;
+  border-radius: 12px;
+  border: 1.5px solid #E7E2DA;
+  min-height: 48px;
+  font-size: 15px;
+  color: #1C1917;
+}
+
+.contact-input-shell:focus-within .page-input,
+.contact-input-shell:focus-within .page-select,
+.contact-input-shell:focus-within .page-textarea {
+  border-color: #B45309;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.12);
+}
+
+.contact-input-shell .page-input::placeholder,
+.contact-input-shell .page-textarea::placeholder {
+  color: #A8A29E;
+}
+
+.contact-input-shell .page-textarea {
+  display: block;
+  height: 160px;
+  min-height: 120px;
+  max-height: 400px;
+  padding-top: 14px;
+  padding-right: 16px;
+  line-height: 1.6;
+  resize: vertical;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Custom topic select */
+.contact-select {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+}
+
+.contact-select-trigger {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 44px 12px 44px;
+  background: #FFFDF8;
+  border-radius: 12px;
+  border: 1.5px solid #E7E2DA;
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: #1C1917;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+
+.contact-select-trigger--placeholder {
+  color: #A8A29E;
+  font-weight: 400;
+}
+
+.contact-select-trigger:hover {
+  border-color: #D6D0C4;
+}
+
+.contact-select-trigger[aria-expanded="true"] {
+  border-color: #B45309;
+  box-shadow: 0 0 0 3px rgba(180, 83, 9, 0.12);
+}
+
+.contact-select-trigger:focus-visible {
+  outline: 2px solid #B45309;
+  outline-offset: 2px;
+}
+
+.contact-select-trigger-label {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-select-chevron {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #78716C;
+  pointer-events: none;
+  transition: transform 250ms ease, color 250ms ease;
+}
+
+.contact-select-trigger[aria-expanded="true"] + .contact-select-chevron,
+.contact-input-shell:has(.contact-select-trigger[aria-expanded="true"]) .contact-select-chevron {
+  transform: translateY(-50%) rotate(180deg);
+  color: #B45309;
+}
+
+.contact-input-shell:has(.contact-select-trigger[aria-expanded="true"]) .contact-input-icon {
+  color: #B45309;
+}
+
+.contact-select-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 20;
+  margin: 0;
+  padding: 6px;
+  list-style: none;
+  background: #fff;
+  border: 1.5px solid #E7E2DA;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(28, 25, 23, 0.12);
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.contact-select-option {
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #44403C;
+  cursor: pointer;
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+.contact-select-option:hover,
+.contact-select-option:focus {
+  background: rgba(180, 83, 9, 0.08);
+  color: #B45309;
+  outline: none;
+}
+
+.contact-select-option--selected {
+  background: rgba(30, 77, 123, 0.08);
+  color: #1E4D7B;
+  font-weight: 600;
+}
+
+.contact-select-option--selected:hover,
+.contact-select-option--active {
+  background: rgba(180, 83, 9, 0.08);
+  color: #B45309;
+}
+
+.contact-select-option--selected.contact-select-option--active {
+  background: rgba(180, 83, 9, 0.12);
+  color: #B45309;
+}
+
+.contact-field-hint {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #78716C;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contact-field-error {
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #DC2626;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-form-footer {
+  margin-top: 8px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(28, 25, 23, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form-trust {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px;
+  color: #78716C;
+  line-height: 1.5;
+}
+
+.contact-form-trust-icon {
+  flex-shrink: 0;
+  color: #4A7C59;
+  margin-top: 1px;
+}
+
+.contact-form-submit {
+  width: 100%;
+  min-height: 52px;
+  border: none;
+  border-radius: 14px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  background: linear-gradient(135deg, #B45309 0%, #D97706 100%);
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(180, 83, 9, 0.25);
+  transition: box-shadow 250ms ease, transform 250ms ease, opacity 250ms ease;
+}
+
+.contact-form-submit:hover:not(:disabled) {
+  box-shadow: 0 8px 28px rgba(180, 83, 9, 0.35);
+}
+
+.contact-form-submit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.contact-form-submit:focus-visible {
+  outline: 2px solid #1E4D7B;
+  outline-offset: 3px;
+}
+
+.contact-form-submit-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: contactSpin 0.7s linear infinite;
+}
+
+@keyframes contactSpin {
+  to { transform: rotate(360deg); }
+}
+
+.contact-success {
+  text-align: center;
+  padding: 48px 24px;
+}
+
+.contact-success-icon-wrap {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: rgba(74, 124, 89, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-success-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: #1C1917;
+  margin: 0 0 12px;
+}
+
+.contact-success-text {
+  font-family: 'Nunito', sans-serif;
+  font-size: 16px;
+  color: #78716C;
+  line-height: 1.7;
+  margin: 0 auto;
+  max-width: 360px;
+}
+
+@media (max-width: 480px) {
+  .contact-form-body {
+    padding: 24px 20px 28px;
+  }
+
+  .contact-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-form-submit-spinner {
+    animation: none;
+    border-top-color: rgba(255, 255, 255, 0.8);
+  }
+}

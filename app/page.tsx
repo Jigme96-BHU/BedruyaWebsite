@@ -6,6 +6,7 @@ import { Heart, Shield, Users, Home, Activity } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import InteractiveSelector from "@/components/ui/interactive-selector";
+import TeamAvatar from "@/components/TeamAvatar";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -100,7 +101,7 @@ export default function HomePage() {
               zIndex: 1,
             }} />
             {/* Photo */}
-            <div style={{ position: "absolute", inset: 0, borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,25,23,0.14)", zIndex: 2 }}>
+            <div style={{ position: "absolute", inset: 0, borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,25,23,0.14)", zIndex: 2 }} className="premium-image-frame">
               <Image src="/images/activity2.jpg" alt="Bedurya team supporting community" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
             </div>
           </motion.div>
@@ -131,7 +132,7 @@ export default function HomePage() {
       />
 
       {/* ── VALUES ── */}
-      <section className="home-section-padded" style={{ background: "#F7F5F2", padding: "100px 24px" }}>
+      <section className="home-section-padded premium-values-section" style={{ background: "#F7F5F2", padding: "100px 24px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
           <motion.div
             variants={stagger}
@@ -160,11 +161,9 @@ export default function HomePage() {
               <motion.div
                 key={v.title}
                 variants={fadeUp}
+                className="premium-card page-hover-lift"
                 style={{
-                  background: "#FFFFFF",
-                  borderRadius: "16px",
                   padding: "36px 32px 32px",
-                  boxShadow: "0 2px 16px rgba(28,25,23,0.06)",
                   position: "relative",
                   overflow: "hidden",
                 }}
@@ -226,12 +225,8 @@ export default function HomePage() {
               { name: "Sonam", role: "Business Development Manager", img: "/team/sonam.jpg" },
             ].map((m) => (
               <motion.div key={m.name} variants={fadeUp} style={{ textAlign: "center" }}>
-                <div style={{ position: "relative", width: "160px", height: "160px", margin: "0 auto 16px" }}>
-                  {/* Decorative ring */}
-                  <div style={{ position: "absolute", inset: "-6px", borderRadius: "50%", border: "2px solid #B45309", opacity: 0.25 }} />
-                  <div style={{ width: "160px", height: "160px", borderRadius: "50%", overflow: "hidden", boxShadow: "0 8px 32px rgba(28,25,23,0.1)", position: "relative" }}>
-                    <Image src={m.img} alt={m.name} fill sizes="160px" style={{ objectFit: "cover" }} />
-                  </div>
+                <div style={{ marginBottom: "16px" }}>
+                  <TeamAvatar src={m.img} alt={m.name} size={160} hover />
                 </div>
                 <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "24px", fontWeight: 700, color: "#1C1917", marginBottom: "4px" }}>
                   {m.name}
@@ -244,7 +239,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-            <Link href="/team" style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 700, fontSize: "16px", background: "#1E4D7B", color: "#FFFFFF", padding: "16px 36px", borderRadius: "12px", textDecoration: "none", display: "inline-block", cursor: "pointer" }}>
+            <Link href="/team" className="page-btn page-btn-blue" style={{ textDecoration: "none" }}>
               Meet the Full Team
             </Link>
           </motion.div>
@@ -264,7 +259,7 @@ export default function HomePage() {
         }
       `}</style>
       {/* ── CTA ── */}
-      <section style={{ background: "#1E4D7B", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
+      <section className="premium-hero-cta page-hero-banner" style={{ background: "#1E4D7B", padding: "100px 24px", position: "relative", overflow: "hidden" }}>
         {/* Decorative circles */}
         <div style={{ position: "absolute", top: "-80px", left: "-80px", width: "320px", height: "320px", borderRadius: "50%", background: "rgba(180,83,9,0.12)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", bottom: "-60px", right: "-60px", width: "240px", height: "240px", borderRadius: "50%", background: "rgba(245,158,11,0.1)", pointerEvents: "none" }} />
@@ -286,13 +281,15 @@ export default function HomePage() {
           <motion.div variants={fadeUp} className="cta-buttons" style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <a
               href="tel:+61405752984"
-              style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 700, fontSize: "16px", background: "#B45309", color: "#FFFFFF", padding: "16px 32px", borderRadius: "12px", textDecoration: "none", display: "inline-block", cursor: "pointer" }}
+              className="page-btn page-btn-primary"
+              style={{ textDecoration: "none" }}
             >
               Call +61 (04) 0575 2984
             </a>
             <Link
               href="/contact"
-              style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 700, fontSize: "16px", background: "transparent", color: "#FFFFFF", padding: "16px 32px", borderRadius: "12px", textDecoration: "none", display: "inline-block", border: "2px solid rgba(255,255,255,0.4)", cursor: "pointer" }}
+              className="page-btn premium-outline-btn"
+              style={{ textDecoration: "none", color: "#FFFFFF", padding: "16px 32px", borderRadius: "14px", display: "inline-block" }}
             >
               Send a Message
             </Link>

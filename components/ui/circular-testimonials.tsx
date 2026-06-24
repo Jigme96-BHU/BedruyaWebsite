@@ -59,16 +59,26 @@ const testimonialStyles = `
   .image-container {
     position: relative;
     width: 100%;
-    height: 24rem;
+    aspect-ratio: 4 / 5;
+    max-height: 24rem;
     perspective: 1000px;
   }
-  .testimonial-image {
+  .testimonial-image-frame {
     position: absolute;
+    inset: 0;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: #F7F5F2;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+  }
+  .testimonial-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    object-position: center 18%;
+    display: block;
   }
   .testimonial-content {
     display: flex;
@@ -202,7 +212,7 @@ export const CircularTestimonials = ({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(15deg)`,
+        transform: `translateX(-${gap}px) translateY(-${maxStickUp}px) scale(0.88) rotateY(6deg)`,
         transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
       };
     }
@@ -211,7 +221,7 @@ export const CircularTestimonials = ({
         zIndex: 2,
         opacity: 1,
         pointerEvents: "auto",
-        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.85) rotateY(-15deg)`,
+        transform: `translateX(${gap}px) translateY(-${maxStickUp}px) scale(0.88) rotateY(-6deg)`,
         transition: "all 0.8s cubic-bezier(.4,2,.3,1)",
       };
     }
@@ -235,13 +245,17 @@ export const CircularTestimonials = ({
       <div className="testimonial-grid">
         <div className="image-container" ref={imageContainerRef}>
           {testimonials.map((testimonial, index) => (
-            <img
+            <div
               key={testimonial.src}
-              src={testimonial.src}
-              alt={testimonial.name}
-              className="testimonial-image"
+              className="testimonial-image-frame"
               style={getImageStyle(index)}
-            />
+            >
+              <img
+                src={testimonial.src}
+                alt={testimonial.name}
+                className="testimonial-image"
+              />
+            </div>
           ))}
         </div>
         <div className="testimonial-content">

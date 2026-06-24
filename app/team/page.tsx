@@ -1,8 +1,18 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { CircularTestimonials } from "@/components/ui/circular-testimonials";
+import TeamAvatar from "@/components/TeamAvatar";
+import {
+  HeroOrb,
+  PageButton,
+  PageHeroContent,
+  PageHeroItem,
+  Reveal,
+  StaggerGroup,
+  StaggerItem,
+  fadeInLeft,
+  fadeInRight,
+} from "@/components/ui/page-motion";
 
 const team = [
   {
@@ -49,6 +59,7 @@ export default function TeamPage() {
     <>
       {/* Header */}
       <section
+        className="page-hero-banner"
         style={{
           background: "linear-gradient(135deg, #1E4D7B 0%, #1a3d5c 100%)",
           padding: "140px 24px 80px",
@@ -56,17 +67,25 @@ export default function TeamPage() {
           overflow: "hidden",
         }}
       >
-        <div aria-hidden style={{ position: "absolute", bottom: "-60px", right: "-60px", width: "280px", height: "280px", borderRadius: "50%", background: "rgba(245,158,11,0.1)", pointerEvents: "none" }} />
+        <HeroOrb className="page-hero-orb" style={{ position: "absolute", bottom: "-60px", right: "-60px", width: "280px", height: "280px", borderRadius: "50%", background: "rgba(245,158,11,0.1)", pointerEvents: "none" }} />
         <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center", position: "relative" }}>
-          <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: "13px", fontWeight: 700, color: "#F59E0B", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "16px" }}>
-            The People Behind the Care
-          </p>
-          <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(36px,5vw,60px)", fontWeight: 700, color: "#fff", marginBottom: "20px", lineHeight: 1.1 }}>
-            Meet Our Team
-          </h1>
-          <p style={{ color: "#CBD5E1", fontSize: "18px", lineHeight: 1.75 }}>
-            Led by experienced Registered Nurses, our dedicated team brings professionalism, expertise, and genuine care to every interaction.
-          </p>
+          <PageHeroContent>
+            <PageHeroItem>
+              <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: "13px", fontWeight: 700, color: "#F59E0B", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "16px" }}>
+                The People Behind the Care
+              </p>
+            </PageHeroItem>
+            <PageHeroItem>
+              <h1 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(36px,5vw,60px)", fontWeight: 700, color: "#fff", marginBottom: "20px", lineHeight: 1.1 }}>
+                Meet Our Team
+              </h1>
+            </PageHeroItem>
+            <PageHeroItem>
+              <p style={{ color: "#CBD5E1", fontSize: "18px", lineHeight: 1.75 }}>
+                Led by experienced Registered Nurses, our dedicated team brings professionalism, expertise, and genuine care to every interaction.
+              </p>
+            </PageHeroItem>
+          </PageHeroContent>
         </div>
       </section>
 
@@ -74,8 +93,9 @@ export default function TeamPage() {
       <section className="team-section" style={{ background: "#FFFDF8", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
           {team.map((member, i) => (
-            <div
+            <Reveal
               key={member.name}
+              variants={i % 2 === 0 ? fadeInLeft : fadeInRight}
               style={{
                 display: "grid",
                 gridTemplateColumns: "minmax(240px, 340px) 1fr",
@@ -86,20 +106,15 @@ export default function TeamPage() {
             >
               {/* Photo + name */}
               <div style={{ textAlign: "center", order: i % 2 === 0 ? 0 : 1 }}>
-                <div
-                  className="member-photo"
-                  style={{
-                    position: "relative",
-                    width: "280px",
-                    height: "280px",
-                    borderRadius: "50%",
-                    overflow: "hidden",
-                    margin: "0 auto 24px",
-                    border: `5px solid ${member.color}20`,
-                    boxShadow: `0 16px 48px ${member.color}25`,
-                  }}
-                >
-                  <Image src={member.img} alt={member.name} fill sizes="280px" style={{ objectFit: "cover" }} />
+                <div style={{ marginBottom: "24px" }}>
+                  <TeamAvatar
+                    src={member.img}
+                    alt={member.name}
+                    size={280}
+                    borderColor={member.color}
+                    hover
+                    className="team-avatar--profile"
+                  />
                 </div>
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "36px", fontWeight: 700, color: "#1C1917", marginBottom: "6px" }}>
                   {member.name}
@@ -111,6 +126,7 @@ export default function TeamPage() {
                   {member.expertise.map((e) => (
                     <span
                       key={e}
+                      className="page-tag"
                       style={{
                         background: `${member.color}12`,
                         border: `1px solid ${member.color}30`,
@@ -141,7 +157,7 @@ export default function TeamPage() {
                   </p>
                 ))}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
         <style>{`
@@ -151,24 +167,27 @@ export default function TeamPage() {
           @media (max-width: 768px) {
             .member-row { grid-template-columns: 1fr !important; gap: 32px !important; }
             .member-row > div { order: unset !important; }
-            .member-photo { width: 200px !important; height: 200px !important; }
           }
           @media (max-width: 767px) { .team-section { padding: 60px 16px !important; } }
         `}</style>
       </section>
 
       {/* ── Team Showcase ── */}
-      <section style={{ background: "#F0F7FF", padding: "96px 24px" }}>
+      <section className="premium-blue-section" style={{ background: "#F0F7FF", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: "64px" }}>
-            <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: "13px", fontWeight: 700, color: "#B45309", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>
-              In Their Own Words
-            </p>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(30px,3.5vw,46px)", fontWeight: 700, color: "#1C1917" }}>
-              Voices of Our Team
-            </h2>
-          </div>
-          <div style={{ display: "flex", justifyContent: "center", overflowX: "hidden", width: "100%" }}>
+          <StaggerGroup style={{ textAlign: "center", marginBottom: "64px" }}>
+            <StaggerItem>
+              <p style={{ fontFamily: "'Nunito', sans-serif", fontSize: "13px", fontWeight: 700, color: "#B45309", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: "12px" }}>
+                In Their Own Words
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(30px,3.5vw,46px)", fontWeight: 700, color: "#1C1917" }}>
+                Voices of Our Team
+              </h2>
+            </StaggerItem>
+          </StaggerGroup>
+          <Reveal style={{ display: "flex", justifyContent: "center", overflowX: "hidden", width: "100%" }}>
             <CircularTestimonials
               autoplay={true}
               colors={{
@@ -201,7 +220,7 @@ export default function TeamPage() {
                 },
               ]}
             />
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -214,30 +233,17 @@ export default function TeamPage() {
           borderTop: "1px solid rgba(180,83,9,0.1)",
         }}
       >
-        <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+        <Reveal style={{ maxWidth: "600px", margin: "0 auto" }}>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(28px,3.5vw,44px)", fontWeight: 700, color: "#1C1917", marginBottom: "16px" }}>
             Want to Work with Us?
           </h2>
           <p style={{ color: "#78716C", fontSize: "17px", lineHeight: 1.75, marginBottom: "36px" }}>
             We&apos;re always looking for compassionate, skilled professionals to join our team. Get in touch to learn about opportunities with Bedurya.
           </p>
-          <Link
-            href="/contact"
-            style={{
-              fontFamily: "'Nunito', sans-serif",
-              fontWeight: 700,
-              fontSize: "16px",
-              background: "#B45309",
-              color: "#fff",
-              padding: "16px 36px",
-              borderRadius: "12px",
-              textDecoration: "none",
-              display: "inline-block",
-            }}
-          >
+          <PageButton href="/contact" variant="primary">
             Get in Touch
-          </Link>
-        </div>
+          </PageButton>
+        </Reveal>
       </section>
     </>
   );

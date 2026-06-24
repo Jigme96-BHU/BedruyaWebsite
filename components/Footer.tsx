@@ -7,8 +7,8 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 export default function Footer() {
   return (
     <footer
+      className="site-footer"
       style={{
-        background: "#1E4D7B",
         color: "#E2EDF8",
         paddingTop: "64px",
         paddingBottom: "32px",
@@ -50,9 +50,8 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
               <span
+                className="footer-badge"
                 style={{
-                  background: "rgba(245,158,11,0.2)",
-                  border: "1px solid rgba(245,158,11,0.4)",
                   color: "#FDE68A",
                   fontSize: "12px",
                   padding: "4px 10px",
@@ -64,9 +63,10 @@ export default function Footer() {
                 NDIS Registered
               </span>
               <span
+                className="footer-badge"
                 style={{
-                  background: "rgba(74,124,89,0.3)",
-                  border: "1px solid rgba(74,124,89,0.5)",
+                  background: "rgba(74,124,89,0.25)",
+                  border: "1px solid rgba(74,124,89,0.45)",
                   color: "#86EFAC",
                   fontSize: "12px",
                   padding: "4px 10px",
@@ -82,14 +82,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "20px",
-                color: "#fff",
-                marginBottom: "20px",
-              }}
-            >
+            <h4 className="footer-heading">
               Quick Links
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -101,17 +94,7 @@ export default function Footer() {
                 { href: "/contact", label: "Contact Us" },
               ].map((l) => (
                 <li key={l.href}>
-                  <Link
-                    href={l.href}
-                    style={{
-                      color: "#CBD5E1",
-                      textDecoration: "none",
-                      fontSize: "15px",
-                      transition: "color 200ms",
-                    }}
-                    onMouseEnter={(e) => ((e.target as HTMLElement).style.color = "#F59E0B")}
-                    onMouseLeave={(e) => ((e.target as HTMLElement).style.color = "#CBD5E1")}
-                  >
+                  <Link href={l.href} className="footer-link">
                     {l.label}
                   </Link>
                 </li>
@@ -121,14 +104,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "20px",
-                color: "#fff",
-                marginBottom: "20px",
-              }}
-            >
+            <h4 className="footer-heading">
               Our Services
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
@@ -148,14 +124,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4
-              style={{
-                fontFamily: "'Cormorant Garamond', serif",
-                fontSize: "20px",
-                color: "#fff",
-                marginBottom: "20px",
-              }}
-            >
+            <h4 className="footer-heading">
               Contact Us
             </h4>
             <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
