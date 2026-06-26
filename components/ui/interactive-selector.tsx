@@ -133,7 +133,7 @@ const InteractiveSelector = ({
               position: "relative",
               flex: activeIndex === index ? "7 1 0%" : "1 1 0%",
               backgroundImage: `url('${option.image}')`,
-              backgroundSize: activeIndex === index ? "auto 100%" : "auto 120%",
+              backgroundSize: "cover",
               backgroundPosition: "center",
               borderLeft: index === 0 ? "none" : `2px solid ${activeIndex === index ? "rgba(255,255,255,0.3)" : "rgba(255,255,255,0.08)"}`,
               cursor: "pointer",
