@@ -109,7 +109,7 @@ export default function HeroSlideshow() {
             marginBottom: "36px",
             maxWidth: "480px",
           }}>
-            Bedurya — named for the Medicine Buddha — brings compassionate, nurse-led NDIS support to participants across the ACT and Queanbeyan.
+            Bedurya — named for the Medicine Buddha<br />Brings compassionate, nurse-led NDIS support to participants across the ACT and Queanbeyan.
           </p>
 
           <div className="hero-buttons" style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>
@@ -217,7 +217,7 @@ export default function HeroSlideshow() {
         }
         @media (max-width: 768px) {
           .hero-img          { object-position: 65% center !important; }
-          .hero-content      { padding: 32px 18px 80px !important; }
+          .hero-content      { padding: 20px 18px 80px !important; align-items: flex-start !important; }
           .hero-heading-main { font-size: clamp(36px, 10vw, 56px) !important; }
           .hero-heading-sub  { font-size: clamp(22px, 6vw,  34px) !important; }
           .hero-body         { font-size: 14px !important; line-height: 1.6 !important; margin-bottom: 24px !important; }
