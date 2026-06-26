@@ -101,7 +101,7 @@ export default function HeroSlideshow() {
             </span>
           </h1>
 
-          <p style={{
+          <p className="hero-body" style={{
             fontFamily: "'Nunito', sans-serif",
             fontSize: "17px",
             color: "rgba(255,255,255,0.78)",
@@ -216,19 +216,24 @@ export default function HeroSlideshow() {
           .hero-content { padding: 60px 5% 60px 32px !important; }
         }
         @media (max-width: 768px) {
-          .hero-img { object-position: 65% center !important; }
-          .hero-content { padding: 40px 20px 90px !important; }
-          .hero-heading-main { font-size: clamp(56px, 13vw, 80px) !important; }
-          .hero-heading-sub  { font-size: clamp(34px, 8vw,  48px) !important; }
+          .hero-img          { object-position: 65% center !important; }
+          .hero-content      { padding: 32px 18px 80px !important; }
+          .hero-heading-main { font-size: clamp(36px, 10vw, 56px) !important; }
+          .hero-heading-sub  { font-size: clamp(22px, 6vw,  34px) !important; }
+          .hero-body         { font-size: 14px !important; line-height: 1.6 !important; margin-bottom: 24px !important; }
+          .hero-buttons      { gap: 8px !important; margin-bottom: 24px !important; }
+          .hero-buttons a    { font-size: 13px !important; padding: 11px 20px !important; }
+          .hero-trust-badge  { padding: 10px 14px !important; }
         }
         @media (max-width: 480px) {
-          .hero-img { object-position: 60% center !important; }
-          .hero-heading-main { font-size: clamp(48px, 13vw, 68px) !important; }
-          .hero-heading-sub  { font-size: clamp(28px, 8vw,  40px) !important; }
-          .hero-content { padding: 32px 16px 80px !important; }
-          .hero-controls { bottom: 16px !important; right: 16px !important; }
-          .hero-counter { display: none !important; }
-          .hero-scroll-cue { display: none !important; }
+          .hero-img          { object-position: 60% center !important; }
+          .hero-content      { padding: 28px 16px 70px !important; }
+          .hero-heading-main { font-size: clamp(30px, 10vw, 44px) !important; }
+          .hero-heading-sub  { font-size: clamp(18px, 6vw,  28px) !important; }
+          .hero-body         { font-size: 13px !important; margin-bottom: 20px !important; }
+          .hero-controls     { bottom: 16px !important; right: 16px !important; }
+          .hero-counter      { display: none !important; }
+          .hero-scroll-cue   { display: none !important; }
         }
       `}} />
 
