@@ -1,12 +1,7 @@
-import fs from "fs";
-import path from "path";
 import { NextResponse } from "next/server";
 
+const SLIDES = ["/slides/new1.png", "/slides/new2.png", "/slides/new3.png"];
+
 export async function GET() {
-  const slidesDir = path.join(process.cwd(), "public", "slides");
-  const files = fs.readdirSync(slidesDir)
-    .filter((f) => /\.(jpe?g|png|webp)$/i.test(f))
-    .sort()
-    .map((f) => `/slides/${f}`);
-  return NextResponse.json(files);
+  return NextResponse.json(SLIDES);
 }

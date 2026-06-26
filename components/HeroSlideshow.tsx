@@ -10,10 +10,12 @@ export default function HeroSlideshow() {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    fetch("/api/slides")
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const endpoint = isMobile ? "/api/mobileslides" : "/api/slides";
+    fetch(endpoint)
       .then((r) => r.json())
       .then((data: string[]) => setSlides(data))
-      .catch(() => setSlides(["/slides/activity1.jpg"]));
+      .catch(() => setSlides(["/slides/new1.png"]));
   }, []);
 
   useEffect(() => {
