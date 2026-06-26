@@ -26,7 +26,7 @@ const services = [
       "Cleaning, laundry, and meal preparation",
       "Shopping and errands assistance",
     ],
-    image: "/images/activity1.jpg",
+    image: "/images/hero1.jpg",
   },
   {
     title: "Community & Social Support",
@@ -38,7 +38,7 @@ const services = [
       "Safe and reliable transport",
       "Building and maintaining social connections",
     ],
-    image: "/images/activity2.jpg",
+    image: "/images/hero2.jpg",
   },
   {
     title: "Health & Wellbeing Support",
@@ -50,7 +50,7 @@ const services = [
       "Health goal planning and tracking",
       "Coordination with healthcare providers",
     ],
-    image: "/images/activity3.jpg",
+    image: "/images/about1.jpg",
   },
   {
     title: "Supported Independent Living (SIL)",
@@ -62,7 +62,7 @@ const services = [
       "Support with daily routines and decisions",
       "Safe and supportive home environments",
     ],
-    image: "/images/activity4.jpg",
+    image: "/images/about2.jpg",
   },
   {
     title: "Nursing & Clinical Care",

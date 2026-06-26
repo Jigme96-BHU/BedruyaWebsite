@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import AboutSlideshow from "@/components/AboutSlideshow";
 import {
   HeroOrb,
   HoverImageWrap,
@@ -101,7 +102,7 @@ export default function AboutPage() {
 
           <Reveal variants={fadeInRight}>
             <HoverImageWrap className="split-image premium-image-frame" style={{ position: "relative", height: "480px", borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,25,23,0.12)" }}>
-              <Image src="/images/activity2.jpg" alt="Bedurya Community Care vision" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <AboutSlideshow />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(30,77,123,0.3) 0%, transparent 60%)", pointerEvents: "none" }} />
               <div
                 style={{
