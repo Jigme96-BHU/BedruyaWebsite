@@ -91,10 +91,10 @@ export default function HeroSlideshow() {
             lineHeight: 1.0,
             marginBottom: "20px",
           }}>
-            <span className="hero-heading-main" style={{ fontSize: "clamp(40px, 6vw, 108px)", display: "block" }}>
+            <span className="hero-heading-main" style={{ fontSize: "clamp(56px, 6vw, 108px)", display: "block" }}>
               Bringing Light
             </span>
-            <span style={{ fontSize: "clamp(28px, 4vw, 48px)", color: "#F59E0B", display: "block", marginTop: "4px" }}>
+            <span className="hero-heading-sub" style={{ fontSize: "clamp(36px, 4vw, 48px)", color: "#F59E0B", display: "block", marginTop: "4px" }}>
               into Your Journey
             </span>
           </h1>
@@ -216,13 +216,13 @@ export default function HeroSlideshow() {
         @media (max-width: 768px) {
           .hero-img { object-position: 65% center !important; }
           .hero-content { padding: 40px 20px 90px !important; }
-          .hero-heading-main { font-size: clamp(36px, 9vw, 60px) !important; }
-          .hero-buttons { flex-direction: column !important; }
-          .hero-buttons a { width: 100% !important; justify-content: center !important; }
+          .hero-heading-main { font-size: clamp(56px, 13vw, 80px) !important; }
+          .hero-heading-sub  { font-size: clamp(34px, 8vw,  48px) !important; }
         }
         @media (max-width: 480px) {
           .hero-img { object-position: 60% center !important; }
-          .hero-heading-main { font-size: clamp(30px, 9vw, 48px) !important; }
+          .hero-heading-main { font-size: clamp(48px, 13vw, 68px) !important; }
+          .hero-heading-sub  { font-size: clamp(28px, 8vw,  40px) !important; }
           .hero-content { padding: 32px 16px 80px !important; }
           .hero-controls { bottom: 16px !important; right: 16px !important; }
           .hero-counter { display: none !important; }
