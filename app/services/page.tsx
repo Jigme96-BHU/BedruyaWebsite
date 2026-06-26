@@ -26,7 +26,7 @@ const services = [
       "Cleaning, laundry, and meal preparation",
       "Shopping and errands assistance",
     ],
-    image: "/images/hero1.jpg",
+    image: "/images/hero1.png",
   },
   {
     title: "Community & Social Support",

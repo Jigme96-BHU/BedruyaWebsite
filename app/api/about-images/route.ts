@@ -5,7 +5,7 @@ const IMAGES = [
   "/images/about1.jpg",
   "/images/about2.jpg",
   "/images/activity5.jpg",
-  "/images/hero1.jpg",
+  "/images/hero1.png",
   "/images/hero2.jpg",
 ];
 
