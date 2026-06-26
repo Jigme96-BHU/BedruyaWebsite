@@ -7,6 +7,7 @@ import { motion, type Variants } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import InteractiveSelector from "@/components/ui/interactive-selector";
 import TeamAvatar from "@/components/TeamAvatar";
+import AboutSlideshow from "@/components/AboutSlideshow";
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 40 },
@@ -100,9 +101,9 @@ export default function HomePage() {
               opacity: 0.35,
               zIndex: 1,
             }} />
-            {/* Photo */}
+            {/* Slideshow */}
             <div style={{ position: "absolute", inset: 0, borderRadius: "20px", overflow: "hidden", boxShadow: "0 20px 60px rgba(28,25,23,0.14)", zIndex: 2 }} className="premium-image-frame">
-              <Image src="/images/activity2.jpg" alt="Bedurya team supporting community" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: "cover" }} />
+              <AboutSlideshow />
             </div>
           </motion.div>
         </div>
