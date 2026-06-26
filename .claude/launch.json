@@ -5,7 +5,7 @@
       "name": "bedurya",
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
-      "cwd": "/Users/jigmelhaden/Desktop/claudeBedruya/bedurya-website",
+      "cwd": "/Users/jigmelhaden/Desktop/claudeBedruya/bedurya-website/bedurya-website",
       "port": 3000,
       "autoPort": true
     }

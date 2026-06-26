@@ -40,7 +40,7 @@ export default function HeroSlideshow() {
             transition: "opacity 1.2s ease",
           }}
         >
-          <Image src={src} alt="" fill priority={i === 0} style={{ objectFit: "cover", objectPosition: "80% center" }} sizes="100vw" />
+          <Image src={src} alt="" fill priority={i === 0} className="hero-img" style={{ objectFit: "cover", objectPosition: "80% center" }} sizes="100vw" />
         </div>
       ))}
 
@@ -68,7 +68,7 @@ export default function HeroSlideshow() {
       }}>
         <div style={{ maxWidth: "600px", width: "100%" }}>
 
-          <div style={{
+          <div className="hero-badge" style={{
             display: "inline-flex",
             alignItems: "center",
             gap: "8px",
@@ -110,7 +110,7 @@ export default function HeroSlideshow() {
             Bedurya — named for the Medicine Buddha — brings compassionate, nurse-led NDIS support to participants across the ACT and Queanbeyan.
           </p>
 
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>
+          <div className="hero-buttons" style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>
             <Link
               href="/services"
               style={{
@@ -152,7 +152,7 @@ export default function HeroSlideshow() {
             </Link>
           </div>
 
-          <div style={{
+          <div className="hero-trust-badge" style={{
             display: "inline-flex",
             alignItems: "center",
             gap: "12px",
@@ -214,11 +214,16 @@ export default function HeroSlideshow() {
           .hero-content { padding: 60px 5% 60px 32px !important; }
         }
         @media (max-width: 768px) {
-          .hero-content { padding: 48px 20px 80px !important; }
-          .hero-heading-main { font-size: clamp(36px, 8vw, 72px) !important; }
+          .hero-img { object-position: 65% center !important; }
+          .hero-content { padding: 40px 20px 90px !important; }
+          .hero-heading-main { font-size: clamp(36px, 9vw, 60px) !important; }
+          .hero-buttons { flex-direction: column !important; }
+          .hero-buttons a { width: 100% !important; justify-content: center !important; }
         }
         @media (max-width: 480px) {
-          .hero-heading-main { font-size: clamp(32px, 9vw, 56px) !important; }
+          .hero-img { object-position: 60% center !important; }
+          .hero-heading-main { font-size: clamp(30px, 9vw, 48px) !important; }
+          .hero-content { padding: 32px 16px 80px !important; }
           .hero-controls { bottom: 16px !important; right: 16px !important; }
           .hero-counter { display: none !important; }
           .hero-scroll-cue { display: none !important; }
