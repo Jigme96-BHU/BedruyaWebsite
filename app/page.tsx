@@ -7,6 +7,8 @@ import { motion, type Variants } from "framer-motion";
 import HeroSection from "@/components/HeroSection";
 import InteractiveSelector from "@/components/ui/interactive-selector";
 import TeamAvatar from "@/components/TeamAvatar";
+import { teamPreview } from "@/lib/team-members";
+import { heroImages } from "@/lib/site-images";
 import AboutSlideshow from "@/components/AboutSlideshow";
 
 const fadeUp: Variants = {
@@ -124,8 +126,8 @@ export default function HomePage() {
         heading="Our Services"
         subheading="A wide range of personalised support services designed to meet the unique needs of each individual."
         options={[
-          { title: "Daily Living & Home Support", description: "Personal care, domestic assistance & household tasks", image: "/images/hero1.png", icon: <Home size={20} /> },
-          { title: "Community & Social Support", description: "Outings, appointments & reliable transport", image: "/images/hero2.jpg", icon: <Users size={20} /> },
+          { title: "Daily Living & Home Support", description: "Personal care, domestic assistance & household tasks", image: heroImages.hero1, icon: <Home size={20} /> },
+          { title: "Community & Social Support", description: "Outings, appointments & reliable transport", image: heroImages.hero2, icon: <Users size={20} /> },
           { title: "Health & Wellbeing", description: "Medication assistance & therapeutic support", image: "/images/about1.jpg", icon: <Heart size={20} /> },
           { title: "Supported Independent Living", description: "Tailored support in a safe home environment", image: "/images/about2.jpg", icon: <Shield size={20} /> },
           { title: "Nursing & Clinical Care", description: "Wound care, chronic conditions & medication management", image: "/images/activity5.jpg", icon: <Activity size={20} /> },
@@ -220,11 +222,7 @@ export default function HomePage() {
             className="team-grid"
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "32px", marginBottom: "48px" }}
           >
-            {[
-              { name: "Dema", role: "Managing Director", img: "/team/dema.jpg" },
-              { name: "Karma", role: "Compliance & Quality Manager", img: "/team/karma.jpg" },
-              { name: "Sonam", role: "Business Development Manager", img: "/team/sonam.jpg" },
-            ].map((m) => (
+            {teamPreview.map((m) => (
               <motion.div key={m.name} variants={fadeUp} style={{ textAlign: "center" }}>
                 <div style={{ marginBottom: "16px" }}>
                   <TeamAvatar src={m.img} alt={m.name} size={160} hover />

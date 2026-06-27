@@ -14,6 +14,7 @@ import {
   fadeInLeft,
   fadeInRight,
 } from "@/components/ui/page-motion";
+import { heroImages } from "@/lib/site-images";
 
 const services = [
   {
@@ -26,7 +27,7 @@ const services = [
       "Cleaning, laundry, and meal preparation",
       "Shopping and errands assistance",
     ],
-    image: "/images/hero1.png",
+    image: heroImages.hero1,
   },
   {
     title: "Community & Social Support",
@@ -38,7 +39,7 @@ const services = [
       "Safe and reliable transport",
       "Building and maintaining social connections",
     ],
-    image: "/images/hero2.jpg",
+    image: heroImages.hero2,
   },
   {
     title: "Health & Wellbeing Support",

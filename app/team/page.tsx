@@ -2,6 +2,7 @@
 
 import { CircularTestimonials } from "@/components/ui/circular-testimonials";
 import TeamAvatar from "@/components/TeamAvatar";
+import { teamMembers, teamTestimonials } from "@/lib/team-members";
 import {
   HeroOrb,
   PageButton,
@@ -13,46 +14,6 @@ import {
   fadeInLeft,
   fadeInRight,
 } from "@/components/ui/page-motion";
-
-const team = [
-  {
-    name: "Dema",
-    role: "Managing Director",
-    img: "/team/dema.jpg",
-    tagline: "Leading with heart, inspiring with action!",
-    bio: [
-      "Dema is the heart and vision behind Bedurya Community Care Services, serving as our passionate Managing Director. With over six years of experience as both a Registered Nurse and Enrolled Nurse, Dema brings deep expertise in mental health, community care, and palliative care—ensuring our services are professional, compassionate, and truly person-centred.",
-      "Guided by Buddhist principles, Dema approaches leadership with selflessness, kindness, and a lifelong commitment to making a positive difference in the community. Under Dema's guidance, Bedurya isn't just a care service—it's a place where people are supported, empowered, and valued.",
-    ],
-    expertise: ["Mental Health", "Community Care", "Palliative Care", "Leadership"],
-    color: "#1E4D7B",
-  },
-  {
-    name: "Karma",
-    role: "Compliance & Quality Manager",
-    img: "/team/karma.jpg",
-    tagline: "With Karma on the team, quality isn't just a requirement—it's a promise.",
-    bio: [
-      "Karma brings both heart and expertise to her role as Compliance and Quality Manager at Bedurya Community Care Services. With over five years of experience as a Registered Nurse across a variety of clinical settings—including community care—she knows what quality care truly looks like on the ground.",
-      "She's passionate about making sure everything we do meets the highest standards of safety, quality, and NDIS compliance—so our participants receive care they can truly trust. Her strong clinical background, combined with in-depth knowledge of NDIS regulations, gives Bedurya a real edge.",
-      "Driven, detail-oriented, and deeply compassionate, Karma is committed to making a real difference—helping Bedurya deliver care that is safe, trustworthy, and always centred around the people we support.",
-    ],
-    expertise: ["NDIS Compliance", "Quality Management", "Clinical Governance", "Community Care"],
-    color: "#B45309",
-  },
-  {
-    name: "Sonam",
-    role: "Business Development Manager",
-    img: "/team/sonam.jpg",
-    tagline: "With Sonam on your side, every step of your journey is guided, supported, and full of possibilities!",
-    bio: [
-      "Sonam is our energetic Business Development Manager, bringing over six years of experience as a Registered Nurse across aged care, community nursing, and hospital settings. She combines deep expertise with a passion for helping people thrive.",
-      "Working closely with participants, Sonam helps develop and coordinate personalised NDIS plans—turning goals into achievable steps and dreams into reality.",
-    ],
-    expertise: ["NDIS Planning", "Aged Care", "Community Nursing", "Business Development"],
-    color: "#4A7C59",
-  },
-];
 
 export default function TeamPage() {
   return (
@@ -92,7 +53,7 @@ export default function TeamPage() {
       {/* Team Members */}
       <section className="team-section" style={{ background: "#FFFDF8", padding: "96px 24px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto", display: "flex", flexDirection: "column", gap: "80px" }}>
-          {team.map((member, i) => (
+          {teamMembers.map((member, i) => (
             <Reveal
               key={member.name}
               variants={i % 2 === 0 ? fadeInLeft : fadeInRight}
@@ -199,26 +160,7 @@ export default function TeamPage() {
                 arrowHoverBackground: "#B45309",
               }}
               fontSizes={{ name: "26px", designation: "15px", quote: "17px" }}
-              testimonials={[
-                {
-                  name: "Dema",
-                  designation: "Managing Director",
-                  src: "/team/dema.jpg",
-                  quote: "Bedurya isn't just a care service—it's a place where people are supported, empowered, and valued. Guided by Buddhist principles, I approach leadership with selflessness, kindness, and a lifelong commitment to making a positive difference in the community.",
-                },
-                {
-                  name: "Karma",
-                  designation: "Compliance & Quality Manager",
-                  src: "/team/karma.jpg",
-                  quote: "Quality isn't just a requirement—it's a promise. I'm passionate about making sure everything we do meets the highest standards of safety and NDIS compliance, so our participants receive care they can truly trust.",
-                },
-                {
-                  name: "Sonam",
-                  designation: "Business Development Manager",
-                  src: "/team/sonam.jpg",
-                  quote: "Every step of your journey is guided, supported, and full of possibilities. Working closely with participants, I help turn goals into achievable steps and dreams into reality.",
-                },
-              ]}
+              testimonials={teamTestimonials.map((t) => ({ ...t }))}
             />
           </Reveal>
         </div>

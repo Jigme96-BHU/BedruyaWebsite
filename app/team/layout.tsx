@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { teamImage } from "@/lib/team-members";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
     title: "Our Team | Bedurya Community Care",
     description:
       "Meet the experienced Registered Nurses and leaders behind Bedurya Community Care.",
-    images: [{ url: "/team/dema.jpg", width: 1200, height: 630, alt: "Bedurya Community Care team" }],
+    images: [{ url: teamImage("dema.jpg"), width: 1200, height: 630, alt: "Bedurya Community Care team" }],
   },
   alternates: { canonical: "/team" },
 };

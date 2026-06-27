@@ -58,6 +58,7 @@ export default function TeamAvatar({
         }}
       >
         <Image
+          key={src}
           src={src}
           alt={alt}
           fill
