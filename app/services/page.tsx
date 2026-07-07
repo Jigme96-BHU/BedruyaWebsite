@@ -18,67 +18,107 @@ import { heroImages } from "@/lib/site-images";
 
 const services = [
   {
-    title: "Daily Living & Home Support",
-    tagline: "Comfortable, confident, and in control of your routine.",
-    desc: "We provide practical, respectful support with everyday activities, helping you feel comfortable, confident, and in control of your routine.",
-    items: [
-      "Personal care and hygiene support",
-      "Domestic assistance and household tasks",
-      "Cleaning, laundry, and meal preparation",
-      "Shopping and errands assistance",
-    ],
-    image: heroImages.hero1,
-  },
-  {
-    title: "Community & Social Support",
-    tagline: "Staying connected is essential for wellbeing.",
-    desc: "We support participants to attend social outings, community activities, and medical appointments, including safe and reliable transport services.",
-    items: [
-      "Social outings and community activities",
-      "Medical and therapy appointments",
-      "Safe and reliable transport",
-      "Building and maintaining social connections",
-    ],
-    image: heroImages.hero2,
-  },
-  {
     title: "Health & Wellbeing Support",
-    tagline: "Maintaining your health and independence.",
-    desc: "Our team offers medication assistance and prompts, along with therapeutic support to help you maintain your health and independence.",
+    tagline: "Maintaining your health, wellbeing, and independence.",
+    desc: "We provide personalised health and wellbeing support to help NDIS participants manage their daily health needs, improve their quality of life, and maintain independence. Our experienced support team works closely with participants, families, and healthcare professionals to ensure consistent, person-centred care.",
     items: [
-      "Medication assistance and prompts",
-      "Therapeutic support and monitoring",
-      "Health goal planning and tracking",
-      "Coordination with healthcare providers",
+      "Medication assistance & reminders",
+      "Therapeutic support",
+      "Health monitoring",
+      "Health goal planning",
+      "Coordination with healthcare professionals",
+      "Healthy lifestyle support",
+      "Appointment assistance",
+      "Wellbeing & independence support",
     ],
     image: "/images/about1.jpg",
   },
   {
     title: "Supported Independent Living (SIL)",
-    tagline: "Live as independently as possible.",
-    desc: "We empower individuals to live as independently as possible, providing tailored support within a safe and supportive home environment.",
+    tagline: "Live independently with the right support.",
+    desc: "We provide personalised Supported Independent Living (SIL) services to help NDIS participants build independence, develop daily living skills, and enjoy a safe, comfortable, and supportive home environment.",
     items: [
-      "Tailored in-home support packages",
-      "24/7 availability options",
-      "Support with daily routines and decisions",
-      "Safe and supportive home environments",
+      "Personalised in-home support",
+      "Assistance with personal care and daily living activities",
+      "Meal planning and preparation",
+      "Household tasks and home maintenance",
+      "Medication assistance and reminders",
+      "Support with shopping and community access",
+      "Skill development for independent living",
+      "Overnight and 24/7 support options",
+      "Assistance with budgeting and managing daily routines",
+      "Social participation and building life skills",
+      "Support with appointments and transport",
+      "Safe, respectful, and supportive shared or individual living environments",
     ],
     image: "/images/about2.jpg",
   },
   {
     title: "Nursing & Clinical Care",
-    tagline: "Professional healthcare support at home.",
-    desc: "Led by experienced Registered Nurses, our clinical services ensure professional, high-quality healthcare support at home.",
+    tagline: "Professional healthcare support in the comfort of your home.",
+    desc: "Our qualified Registered Nurses provide high-quality clinical care tailored to your individual health needs, helping you manage medical conditions safely while maintaining your independence.",
     items: [
-      "Wound care and management",
-      "Catheter care and support",
+      "Comprehensive health assessments",
+      "Medication management and administration",
+      "Wound care and dressing changes",
+      "Catheter care and continence support",
       "Stoma care and management",
       "Tracheostomy care",
-      "Chronic condition monitoring (diabetes, etc.)",
-      "Ongoing clinical monitoring",
-      "Medication management and assistance",
+      "Diabetes management and blood glucose monitoring",
+      "Chronic disease management and clinical monitoring",
+      "PEG feeding and enteral nutrition support",
+      "Vital signs monitoring and health observations",
+      "Post-hospital discharge nursing care",
+      "Continence assessments and support",
+      "Care plan development and clinical reviews",
+      "Coordination with GPs, specialists, and allied health professionals",
+      "Education and support for participants, families, and carers",
     ],
     image: "/images/activity5.jpg",
+  },
+  {
+    title: "Daily Living & Home Support",
+    tagline: "Comfortable, confident, and in control of your daily routine.",
+    desc: "We provide personalised daily living support to help NDIS participants maintain their independence, wellbeing, and quality of life in the comfort of their own home.",
+    items: [
+      "Personal care and hygiene assistance",
+      "Showering, dressing, and grooming support",
+      "Meal planning and preparation",
+      "Household cleaning and domestic assistance",
+      "Laundry, ironing, and linen changes",
+      "Grocery shopping and essential errands",
+      "Medication reminders and daily routine support",
+      "Mobility and transfer assistance",
+      "Assistance with household organisation",
+      "Support with attending appointments",
+      "Community access and social participation",
+      "Individualised support tailored to your goals",
+    ],
+    closing:
+      "We deliver compassionate, respectful, and person-centred support that empowers you to live safely, comfortably, and as independently as possible.",
+    image: heroImages.hero2,
+  },
+  {
+    title: "Community & Social Support",
+    tagline: "Staying connected is essential for wellbeing.",
+    desc: "We support NDIS participants to build confidence, stay connected with their community, and participate in meaningful social and recreational activities that enhance independence and wellbeing.",
+    items: [
+      "Community participation and social outings",
+      "Support to attend medical and therapy appointments",
+      "Safe and reliable transport assistance",
+      "Shopping and personal errands",
+      "Recreation and leisure activities",
+      "Support to attend community events and programs",
+      "Building social skills and meaningful relationships",
+      "Assistance with education, volunteering, and employment activities",
+      "Support to develop confidence and independence",
+      "Individualised community access based on your goals",
+      "Accompaniment to appointments and daily activities",
+      "Encouragement to engage in hobbies and interests",
+    ],
+    closing:
+      "We provide friendly, person-centred support that helps participants stay active, connected, and engaged in their community while achieving their NDIS goals.",
+    image: "/slides/new2.png",
   },
 ];
 
@@ -149,6 +189,11 @@ export default function ServicesPage() {
                     </StaggerItem>
                   ))}
                 </StaggerGroup>
+                {s.closing && (
+                  <p style={{ color: "#44403C", fontSize: "16px", lineHeight: 1.8, marginTop: "24px", marginBottom: 0 }}>
+                    {s.closing}
+                  </p>
+                )}
               </div>
 
               {/* Image */}
@@ -203,7 +248,7 @@ export default function ServicesPage() {
               marginBottom: "40px",
             }}
           >
-            &ldquo;At Bedurya Community Care, every service is delivered with compassion, professionalism, and a genuine commitment to helping you live life your way.&rdquo;
+            &ldquo;At Bedurya Community Care, we deliver professional, heartfelt support designed to empower you to live life exactly the way you CHOOSE.&rdquo;
           </p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <PageButton href="tel:+61405752984" variant="primary" external>
