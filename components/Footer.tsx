@@ -48,20 +48,14 @@ export default function Footer() {
             <p style={{ fontSize: "14px", lineHeight: 1.7, color: "#CBD5E1", marginBottom: "16px" }}>
               Bringing Light into Your Life&apos;s Journey. Registered NDIS &amp; DVA Provider serving the ACT and Queanbeyan.
             </p>
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              <span
-                className="footer-badge"
-                style={{
-                  color: "#FDE68A",
-                  fontSize: "12px",
-                  padding: "4px 10px",
-                  borderRadius: "20px",
-                  fontFamily: "'Nunito', sans-serif",
-                  fontWeight: 600,
-                }}
-              >
-                NDIS Registered
-              </span>
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
+              <Image
+                src="/images/ndis-registered.png"
+                alt="NDIS Registered Provider"
+                width={112}
+                height={40}
+                style={{ objectFit: "contain" }}
+              />
               <span
                 className="footer-badge"
                 style={{

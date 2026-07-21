@@ -181,8 +181,22 @@ export default function ContactForm() {
     message: "",
   });
 
+  const nameInvalid = touched.name && form.name.trim().length < 2;
+  const emailInvalid =
+    touched.email &&
+    (form.email.trim() === "" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email));
+  const messageInvalid = touched.message && form.message.trim().length < 10;
+
+  const hasErrors =
+    form.name.trim().length < 2 ||
+    form.email.trim() === "" ||
+    !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email) ||
+    form.message.trim().length < 10;
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setTouched({ name: true, email: true, message: true });
+    if (hasErrors) return;
     setSubmitting(true);
     await new Promise((r) => setTimeout(r, 600));
     setSubmitting(false);
@@ -192,9 +206,6 @@ export default function ContactForm() {
   const markTouched = (field: string) => {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
-
-  const emailInvalid =
-    touched.email && form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
 
   const SubmitButton = reduce ? "button" : motion.button;
 
@@ -246,10 +257,18 @@ export default function ContactForm() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   onBlur={() => markTouched("name")}
-                  className="page-input"
+                  className={`page-input${nameInvalid ? " page-input-error" : ""}`}
                   placeholder="e.g. Jane Smith"
+                  aria-invalid={nameInvalid || undefined}
+                  aria-describedby={nameInvalid ? "name-error" : undefined}
                 />
               </div>
+              {nameInvalid && (
+                <p id="name-error" className="contact-field-error" role="alert">
+                  <AlertCircle size={14} aria-hidden />
+                  Please enter your full name.
+                </p>
+              )}
             </div>
 
             <div className="contact-field">
@@ -318,15 +337,25 @@ export default function ContactForm() {
                 required
                 value={form.message}
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
-                className="page-textarea contact-textarea"
+                onBlur={() => markTouched("message")}
+                className={`page-textarea contact-textarea${messageInvalid ? " page-input-error" : ""}`}
                 placeholder="Tell us a little about what support you're looking for..."
+                aria-invalid={messageInvalid || undefined}
+                aria-describedby={messageInvalid ? "message-error" : undefined}
               />
             </div>
-            <p className="contact-field-hint">
-              {form.message.length > 0
-                ? `${form.message.length} characters`
-                : "Share as much detail as you like — it helps us respond better."}
-            </p>
+            {messageInvalid ? (
+              <p id="message-error" className="contact-field-error" role="alert">
+                <AlertCircle size={14} aria-hidden />
+                Please enter a message (at least 10 characters).
+              </p>
+            ) : (
+              <p className="contact-field-hint">
+                {form.message.length > 0
+                  ? `${form.message.length} characters`
+                  : "Share as much detail as you like — it helps us respond better."}
+              </p>
+            )}
           </div>
 
           <div className="contact-form-footer">

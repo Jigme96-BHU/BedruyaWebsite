@@ -21,6 +21,7 @@ const services = [
     title: "Health & Wellbeing Support",
     tagline: "Maintaining your health, wellbeing, and independence.",
     desc: "We provide personalised health and wellbeing support to help NDIS participants manage their daily health needs, improve their quality of life, and maintain independence. Our experienced support team works closely with participants, families, and healthcare professionals to ensure consistent, person-centred care.",
+    itemsIntro: "Our Health & Wellbeing services include:",
     items: [
       "Medication assistance & reminders",
       "Therapeutic support",
@@ -37,6 +38,7 @@ const services = [
     title: "Supported Independent Living (SIL)",
     tagline: "Live independently with the right support.",
     desc: "We provide personalised Supported Independent Living (SIL) services to help NDIS participants build independence, develop daily living skills, and enjoy a safe, comfortable, and supportive home environment.",
+    itemsIntro: "Our SIL servicesinclude:",
     items: [
       "Personalised in-home support",
       "Assistance with personal care and daily living activities",
@@ -57,6 +59,7 @@ const services = [
     title: "Nursing & Clinical Care",
     tagline: "Professional healthcare support in the comfort of your home.",
     desc: "Our qualified Registered Nurses provide high-quality clinical care tailored to your individual health needs, helping you manage medical conditions safely while maintaining your independence.",
+    itemsIntro: "Our Nursing & Clinical Care services include:",
     items: [
       "Comprehensive health assessments",
       "Medication management and administration",
@@ -74,12 +77,13 @@ const services = [
       "Coordination with GPs, specialists, and allied health professionals",
       "Education and support for participants, families, and carers",
     ],
-    image: "/images/activity5.jpg",
+    image: "/images/nursing-clinical-care.png",
   },
   {
     title: "Daily Living & Home Support",
     tagline: "Comfortable, confident, and in control of your daily routine.",
     desc: "We provide personalised daily living support to help NDIS participants maintain their independence, wellbeing, and quality of life in the comfort of their own home.",
+    itemsIntro: "Our Daily Living & Home Support services include:",
     items: [
       "Personal care and hygiene assistance",
       "Showering, dressing, and grooming support",
@@ -102,6 +106,7 @@ const services = [
     title: "Community & Social Support",
     tagline: "Staying connected is essential for wellbeing.",
     desc: "We support NDIS participants to build confidence, stay connected with their community, and participate in meaningful social and recreational activities that enhance independence and wellbeing.",
+    itemsIntro: "Our Community & Social Support services include:",
     items: [
       "Community participation and social outings",
       "Support to attend medical and therapy appointments",
@@ -118,7 +123,7 @@ const services = [
     ],
     closing:
       "We provide friendly, person-centred support that helps participants stay active, connected, and engaged in their community while achieving their NDIS goals.",
-    image: "/slides/new2.png",
+    image: "/images/community-social-support.png",
   },
 ];
 
@@ -181,6 +186,11 @@ export default function ServicesPage() {
                   {s.tagline}
                 </p>
                 <p style={{ color: "#44403C", fontSize: "16px", lineHeight: 1.8, marginBottom: "24px" }}>{s.desc}</p>
+                {"itemsIntro" in s && s.itemsIntro && (
+                  <p style={{ color: "#44403C", fontSize: "16px", lineHeight: 1.8, marginBottom: "16px", fontWeight: 600 }}>
+                    {s.itemsIntro}
+                  </p>
+                )}
                 <StaggerGroup as="ul" style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "10px" }}>
                   {s.items.map((item) => (
                     <StaggerItem as="li" key={item} style={{ display: "flex", gap: "10px", alignItems: "flex-start" }}>
