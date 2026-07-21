@@ -127,10 +127,10 @@ export default function HomePage() {
         subheading="A wide range of personalised support services designed to meet the unique needs of each individual."
         options={[
           { title: "Daily Living & Home Support", description: "Personal care, domestic assistance & household tasks", image: heroImages.hero1, icon: <Home size={20} /> },
-          { title: "Community & Social Support", description: "Outings, appointments & reliable transport", image: heroImages.hero2, icon: <Users size={20} /> },
+          { title: "Community & Social Support", description: "Outings, appointments & reliable transport", image: "/images/community-social-support.png", icon: <Users size={20} /> },
           { title: "Health & Wellbeing", description: "Medication assistance & therapeutic support", image: "/images/about1.jpg", icon: <Heart size={20} /> },
           { title: "Supported Independent Living", description: "Tailored support in a safe home environment", image: "/images/about2.jpg", icon: <Shield size={20} /> },
-          { title: "Nursing & Clinical Care", description: "Wound care, chronic conditions & medication management", image: "/images/activity5.jpg", icon: <Activity size={20} /> },
+          { title: "Nursing & Clinical Care", description: "Wound care, chronic conditions & medication management", image: "/images/nursing-clinical-care.png", icon: <Activity size={20} /> },
         ]}
       />
 

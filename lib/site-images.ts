@@ -16,9 +16,9 @@ export const heroImages = {
 } as const;
 
 export const aboutSlideshowImages = [
-  siteImage("/images/about1.jpg"),
-  siteImage("/images/about2.jpg"),
-  siteImage("/images/activity5.jpg"),
-  heroImages.hero1,
-  heroImages.hero2,
+  siteImage("/images/about-new-1.jpeg"),
+  siteImage("/images/about-new-2.jpeg"),
+  siteImage("/images/about-new-3.jpeg"),
+  siteImage("/images/about-new-4.jpeg"),
+  siteImage("/images/about-new-5.jpeg"),
 ];
