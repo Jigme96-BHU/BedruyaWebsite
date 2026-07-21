@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
             <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems: "center" }}>
               <Image
-                src="/images/ndis-registered.png"
+                src="/images/ndis-registeredNEW.png"
                 alt="NDIS Registered Provider"
                 width={112}
                 height={40}
