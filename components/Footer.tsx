@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Star } from "lucide-react";
+import { GOOGLE_REVIEW_URL } from "@/lib/site-links";
 
 export default function Footer() {
   return (
@@ -72,6 +73,28 @@ export default function Footer() {
                 DVA Provider
               </span>
             </div>
+            <a
+              href={GOOGLE_REVIEW_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                marginTop: "16px",
+                padding: "10px 18px",
+                borderRadius: "24px",
+                background: "#F59E0B",
+                color: "#1C1917",
+                fontFamily: "'Nunito', sans-serif",
+                fontWeight: 700,
+                fontSize: "14px",
+                textDecoration: "none",
+              }}
+            >
+              <Star size={16} fill="#1C1917" />
+              Review us on Google
+            </a>
           </div>
 
           {/* Quick Links */}

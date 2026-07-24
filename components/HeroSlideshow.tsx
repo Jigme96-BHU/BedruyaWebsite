@@ -82,7 +82,7 @@ export default function HeroSlideshow() {
             marginBottom: "28px",
           }}>
             <span style={{ fontFamily: "'Nunito', sans-serif", fontSize: "12px", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.1em" }}>
-              NDIS Registered Provider · ACT & Queanbeyan
+              NDIS & DVA Service Provider · ACT & Queanbeyan
             </span>
           </div>
 
@@ -109,7 +109,7 @@ export default function HeroSlideshow() {
             marginBottom: "36px",
             maxWidth: "480px",
           }}>
-            Bedurya — named for the Medicine Buddha<br />Brings compassionate, nurse-led NDIS support to participants across the ACT and Queanbeyan.
+            Brings compassionate Nurse-led NDIS<br />and DVA supports and services across ACT &amp; Queanbeyan
           </p>
 
           <div className="hero-buttons" style={{ display: "flex", gap: "12px", flexWrap: "wrap", marginBottom: "40px" }}>

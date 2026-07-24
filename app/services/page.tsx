@@ -90,7 +90,6 @@ const services = [
       "Meal planning and preparation",
       "Household cleaning and domestic assistance",
       "Laundry, ironing, and linen changes",
-      "Grocery shopping and essential errands",
       "Medication reminders and daily routine support",
       "Mobility and transfer assistance",
       "Assistance with household organisation",
