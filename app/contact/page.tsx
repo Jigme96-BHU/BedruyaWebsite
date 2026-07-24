@@ -16,6 +16,7 @@ import {
 
 const contactItems = [
   { icon: <Phone size={20} />, label: "Phone", value: "+61 (04) 0575 2984", href: "tel:+61405752984" },
+  { icon: <Phone size={20} />, label: "Phone", value: "+61 (04) 1459 6669", href: "tel:+61414596669" },
   { icon: <Mail size={20} />, label: "Email", value: "info@bedurya.com.au", href: "mailto:info@bedurya.com.au" },
   { icon: <MapPin size={20} />, label: "Address", value: "6 Gem Street, Strathnairn ACT 2615", href: null },
   { icon: <Clock size={20} />, label: "Hours", value: "Monday–Saturday, 9:00 AM – 6:00 PM", href: null },

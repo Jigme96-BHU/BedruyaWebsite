@@ -147,6 +147,7 @@ export default function Footer() {
             <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
               {[
                 { icon: <Phone size={16} />, text: "+61 (04) 0575 2984", href: "tel:+61405752984" },
+                { icon: <Phone size={16} />, text: "+61 (04) 1459 6669", href: "tel:+61414596669" },
                 { icon: <Mail size={16} />, text: "info@bedurya.com.au", href: "mailto:info@bedurya.com.au" },
                 { icon: <MapPin size={16} />, text: "6 Gem Street, Strathnairn ACT 2615", href: null },
                 { icon: <Clock size={16} />, text: "Mon–Sat, 9:00 AM – 6:00 PM", href: null },
