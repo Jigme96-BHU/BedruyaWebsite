@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Our Team | Bedurya Community Care",
     description:
       "Meet the experienced Registered Nurses and leaders behind Bedurya Community Care.",
-    images: [{ url: teamImage("dema.jpg"), width: 1200, height: 630, alt: "Bedurya Community Care team" }],
+    images: [{ url: teamImage("dema.png"), width: 1200, height: 630, alt: "Bedurya Community Care team" }],
   },
   alternates: { canonical: "/team" },
 };

@@ -12,7 +12,7 @@ export const teamMembers = [
   {
     name: "Dema",
     role: "Managing Director",
-    img: teamImage("dema.jpg"),
+    img: teamImage("dema.png"),
     tagline: "Leading with heart, inspiring with action!",
     bio: [
       "Dema is the heart and vision behind Bedurya Community Care Services, serving as our passionate Managing Director. With over six years of experience as both a Registered Nurse and Enrolled Nurse, Dema brings deep expertise in mental health, community care, and palliative care—ensuring our services are professional, compassionate, and truly person-centred.",
